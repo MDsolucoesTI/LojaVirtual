@@ -1,0 +1,21 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@model MD.LojaVirtual.Dominio.Entidades.Carrinho
+           
+<div class="navbar-right">
+    @Html.ActionLink("Checkout", "Index", "Carrinho", new {returnUrl = Request.Url.PathAndQuery}, new {@class = "btn btn-default navbar-btn"})
+</div>
+
+<div class="navbar-text navbar-right">
+    <b>Seus produtos:</b> 
+    @Model.ItensCarrinho.Sum(x => x.Quantidade) item(s), @Model.ObterValorTotal().ToString("c")
+</div>
+           

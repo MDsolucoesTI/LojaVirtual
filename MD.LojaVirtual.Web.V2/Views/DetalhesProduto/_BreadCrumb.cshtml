@@ -1,0 +1,40 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@model MD.LojaVirtual.Dominio.Dto.BreadCrumbDto
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("ObterProdutosPorGrupo", "Nav",
+                new { id = Model.GrupoCodigo, grupo = Model.GrupoDescricao })">
+            @Model.GrupoDescricao</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("ObterProdutosPorMarca", "Nav",
+                new { id = Model.MarcaCodigo, marca = Model.MarcaDescricao })">
+            @Model.MarcaDescricao
+        </a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("ObterProdutosPorGenero", "Nav",
+                new { id = Model.GeneroCodigo, genero = Model.GeneroDescricao })">
+            @Model.GeneroDescricao
+        </a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("ObterProdutosPorCategoria", "Nav",
+                new { id = Model.CategoriaCodigo, categoria = Model.CategoriaDescricao })">
+            @Model.CategoriaDescricao
+        </a>
+    </li>
+    <li class="breadcrumb-item active">
+        @Model.ProdutoDescricao
+    </li>
+</ol>

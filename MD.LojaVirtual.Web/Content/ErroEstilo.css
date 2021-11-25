@@ -1,0 +1,13 @@
+﻿/*////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+////////////////////////////////////////////////////////////////////////*/
+
+.input-validation-error { border: 1px solid #f00;background-color: #fee;}
+.validation-summary-errors { font-weight: bold; color: #ff0000}
+.validation-summary-valid { display: none;}
+.field-validation-error {color:#ff0000}
+.field-validation-valid {display: none}

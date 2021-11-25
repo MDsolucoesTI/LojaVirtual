@@ -1,0 +1,39 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@model MD.LojaVirtual.Dominio.Entidades.Produto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    @using (Html.BeginForm("Editar", "ModelBinding", FormMethod.Post))
+    {
+        <div>
+            Nome:
+            <input type="text" name="Nome" id="Nome" />
+            <br />
+            Preço:
+            <input type="text" name="Preco" id="Preco" />
+            <input type="submit" value="Cadastrar" />
+        </div>
+    }
+</body>
+
+</html>

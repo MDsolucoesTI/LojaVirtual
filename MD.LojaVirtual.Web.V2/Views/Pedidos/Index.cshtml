@@ -1,0 +1,57 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@model IEnumerable<MD.LojaVirtual.Dominio.Entidades.Pedido>
+
+@{
+    ViewBag.Title = "Meus Pedidos";
+}
+
+<h2>Meus Pedidos</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            Valor total
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmbrulhaPresente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pago)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @item.ProdutosPedido.Sum(p => p.Produto.Preco).ToString("C")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmbrulhaPresente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pago)
+            </td>
+            <td>
+                @Html.ActionLink("Detalhes", "Details", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

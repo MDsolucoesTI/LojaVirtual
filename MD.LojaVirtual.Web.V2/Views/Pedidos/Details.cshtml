@@ -1,0 +1,50 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@model MD.LojaVirtual.Dominio.Entidades.Pedido
+
+@{
+    ViewBag.Title = "Detalhes do Pedido";
+}
+
+<h2>Detalhes do Pedido</h2>
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmbrulhaPresente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmbrulhaPresente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pago)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pago)
+        </dd>
+        <dt>
+            Produtos
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProdutosPedido, templateName: "ProdutosPedidoList")
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Voltar aos meus pedidos", "Index")
+</p>

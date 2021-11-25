@@ -1,0 +1,49 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@model MD.LojaVirtual.Dominio.Entidades.Pedido
+
+@{
+    ViewBag.Title = "MD: Fechar o pedido";
+}
+
+<h2>Fechar o pedido</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ClienteId)
+
+    <h3>Enviar para</h3>
+
+    <div class="form-group">
+    <label>Nome do cliente:</label>
+    @Html.TextBoxFor(x => x.Cliente.NomeCompleto, new { @class = "form-control", disabled = true })
+</div>
+
+    <h3>Dados para entrega</h3>
+
+    @Html.DisplayFor(m => m.Cliente.Endereco)
+
+    <h3>Opções</h3>
+    <div class="checkbox">
+    <label>
+        @Html.EditorFor(x => x.EmbrulhaPresente)
+        Embrulhar para presente?
+    </label>
+</div>
+
+    <input class="btn btn-primary" type="submit" value="Fechar o pedido" />
+
+    <hr />
+
+}

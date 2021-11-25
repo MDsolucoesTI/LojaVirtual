@@ -1,0 +1,26 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@using MD.LojaVirtual.Web.V2.Models
+
+@model SubGrupoCategoriasViewModel
+
+@foreach (var item in Model.Categorias)
+{
+    <li>
+    @Html.ActionLink(@item.CategoriaDescricao, "ObterTenisPorCategoria",
+    new
+    {
+    subGrupoCodigo = @Model.SubGrupo.SubGrupoCodigo,
+    categoriaCodigo = @item.CategoriaCodigo,
+    categoriaDescricao = @item.CategoriaDescricao.ToSeoUrl()
+    })
+</li>
+}

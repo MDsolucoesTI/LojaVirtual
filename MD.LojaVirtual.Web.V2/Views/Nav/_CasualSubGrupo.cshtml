@@ -1,0 +1,25 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@model MD.LojaVirtual.Web.Models.ModalidadeSubGrupoViewModel
+
+@foreach (var item in Model.SubGrupos)
+{
+    <li>
+    @Html.ActionLink(@item.SubGrupoDescricao, "ObterModalidadeSubGrupo",
+    new
+    {
+    modalidadeCodigo = @Model.Modalidade.ModalidadeCodigo,
+    subGrupoCodigo = @item.SubGrupoCodigo,
+    subGrupoDescricao = @item.SubGrupoDescricao.ToSeoUrl()
+    })
+
+</li>
+}

@@ -1,0 +1,33 @@
+﻿<!--
+//////////////////////////////////////////////////////////////////////////
+// Criacao...........: 06/2014
+// Sistema...........: Loja Virtual
+// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
+//////////////////////////////////////////////////////////////////////////
+-->
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+Sou o Controller - @ViewBag.Controller
+
+<br />
+
+Sou a Action = @ViewBag.Action
+
+@section Scripts{
+
+<script src="~/Scripts/jQueryFixes.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        alert("Teste");
+
+    });
+</script>
+}
